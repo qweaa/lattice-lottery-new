@@ -6,10 +6,6 @@ set -e
 git init
 git add -A
 git commit -m 'deploy'
-npm version prepatch
-&&
-vite build
-&&
-node ./src/convert.js
+npm version prepatch && vite build && node ./src/convert.js
 
 cd -
