@@ -1,20 +1,26 @@
 <script setup>
 import WzlReport from "@/lib";
 
-const report = new WzlReport({
-  name: "高荣强",
+const wzlReport = new WzlReport({
+  appid: "高荣强",
 });
 
-const onButtonClick = () => {
-  console.log("版本：", report);
-  report.showName();
+const showAppid = () => {
+  console.log("版本：", wzlReport);
+  wzlReport.showAppid();
+}
+
+const onButtonClick = (id) => {
+  wzlReport.report(id)
 };
 </script>
 
 <template>
   <div>
     <h2>点击埋点</h2>
-    <button @click="onButtonClick">按钮</button>
+    <button @click="showAppid">按钮2</button>
+    <button @click="onButtonClick(2)">埋点2</button>
+    <button @click="onButtonClick(3)">埋点3</button>
   </div>
 </template>
 

@@ -1,7 +1,5 @@
 import fs from 'fs'
-import path, {
-  resolve
-} from 'path'
+import path from 'path'
 import markdownpdf from 'markdown-pdf'
 
 // 指定包含Markdown文件的目录路径
@@ -24,7 +22,9 @@ fs.readdir(entryPath, (err, files) => {
     const outputFilePath = path.join(outPath, `${path.basename(markdownFile, '.md')}.pdf`);
 
     // 使用markdown-pdf库将Markdown转换为PDF
-    markdownpdf().from(inputFilePath).to(outputFilePath, () => {
+    markdownpdf({
+      cssPath: './src/doc/misty-light-windows.css',
+    }).from(inputFilePath).to(outputFilePath, () => {
       console.log(`已成功将 ${inputFilePath} 转换为 ${outputFilePath}`);
     });
   });
