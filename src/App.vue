@@ -7,7 +7,7 @@ const wzlReport = new WzlReport({
 
 const showAppid = () => {
   console.log("版本：", wzlReport);
-  wzlReport.showAppid();
+  wzlReport.showOptions();
 }
 
 const onButtonClick = (id) => {
