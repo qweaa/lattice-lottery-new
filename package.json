@@ -1,7 +1,7 @@
 {
   "name": "ltzlReport",
   "private": true,
-  "version": "0.0.5-0",
+  "version": "0.0.6-0",
   "type": "module",
   "scripts": {
     "dev": "vite",
