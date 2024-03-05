@@ -6,6 +6,6 @@ set -e
 git init
 git add -A
 git commit -m 'deploy'
-npm version prepatch && vite build
+npm version prepatch && npm run build
 
 cd -
