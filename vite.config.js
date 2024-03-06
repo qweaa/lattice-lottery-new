@@ -5,22 +5,11 @@ import vue from '@vitejs/plugin-vue'
 import {
   resolve
 } from 'path'
-import {
-  viteVConsole
-} from 'vite-plugin-vconsole'
 
 export default ({
   mode
 }) => defineConfig({
-  plugins: [vue(), viteVConsole({
-    entry: resolve(__dirname, 'src/main.js'), // 入口文件，或者可以使用这个配置: [path.resolve('src/main.js')]
-    localEnabled: mode === 'development' || mode === 'test', // 本地是否启用
-    enabled: mode === 'development' || mode === 'test', // 是否启用
-    config: {
-      maxLogNumber: 1000,
-      theme: 'light' // 主题颜色 'dark'|'light'
-    }
-  })],
+  plugins: [vue()],
   resolve: {
     alias: {
       '@': resolve(__dirname, 'src')
