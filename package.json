@@ -1,5 +1,5 @@
 {
-  "name": "xcl-demo",
+  "name": "lattice-lottery",
   "private": true,
   "version": "0.0.1-0",
   "type": "module",
@@ -15,20 +15,20 @@
   "files": [
     "dist"
   ],
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
+  "main": "./dist/index.es.js",
+  "module": "./dist/index.umd.js",
   "exports": {
     "SlotMachine": {
-      "import": "./dist/SlotMachine.js",
-      "require": "./dist/SlotMachine.cjs"
+      "import": "./dist/SlotMachine.es.js",
+      "require": "./dist/SlotMachine.umd.js"
     },
     "LotteryGrid": {
-      "import": "./dist/LotteryGrid.js",
-      "require": "./dist/LotteryGrid.cjs"
+      "import": "./dist/LotteryGrid.es.js",
+      "require": "./dist/LotteryGrid.umd.js"
     },
     "LotteryList": {
-      "import": "./dist/LotteryList.js",
-      "require": "./dist/LotteryList.cjs"
+      "import": "./dist/LotteryList.es.js",
+      "require": "./dist/LotteryList.umd.js"
     }
   },
   "dependencies": {
