@@ -5,35 +5,37 @@ import vue from '@vitejs/plugin-vue'
 import {
   resolve
 } from 'path'
+import {
+  libInjectCss,
+} from 'vite-plugin-lib-inject-css';
+
+const _resolve = (path) => resolve(__dirname, path)
 
 export default ({
   mode
 }) => defineConfig({
-  plugins: [vue()],
+  plugins: [vue(), libInjectCss()],
   resolve: {
     alias: {
-      '@': resolve(__dirname, 'src')
+      '@': _resolve('src')
     }
   },
   build: {
-    lib: {
-      entry: resolve(__dirname, 'src/lib/index.js'),
-      name: 'LtzlReport',
-      fileName: () => 'ltzl-report.js',
-      formats: ['umd'],
-    },
-  },
-  // 本地运行配置，及反向代理配置
-  server: {
-    host: true,
-    cors: true, // 默认启用并允许任何源
-    //反向代理配置，注意rewrite写法，开始没看文档在这里踩了坑
-    proxy: {
-      '^/api': {
-        target: 'https://qyzx.smartreply.iflyvoice.com:20104', //代理接口
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, '')
+    rollupOptions: {
+      output: {
+        // Put chunk files at <output>/chunks
+        chunkFileNames: 'chunks/[name].[hash].js',
+        // Put chunk styles at <output>/styles
+        assetFileNames: 'assets/[name][extname]',
       },
-    }
+    },
+    lib: {
+      entry: {
+        index: _resolve('src/lib/index.js'), // Don't forget the main entry!
+        SlotMachine: _resolve('src/lib/SlotMachine/index.js'),
+        LotteryGrid: _resolve('src/lib/Lottery/lottery-grid.js'),
+        LotteryList: _resolve('src/lib/Lottery/lottery-list.js'),
+      },
+    },
   },
 })

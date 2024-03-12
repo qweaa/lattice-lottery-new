@@ -1,0 +1,24 @@
+.slotMachine {
+  display: flex;
+  width: 360px;
+}
+.slotMachine__col {
+  flex: 1;
+  box-shadow: 0 0 10px #ccc;
+  height: 64px;
+  overflow: hidden;
+}
+.slotMachine__li {
+  height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.slotMachine__image {
+  width: 32px;
+  height: 32px;
+}
+.slotMachine__li.hide {
+  visibility: hidden;
+}
