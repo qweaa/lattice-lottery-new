@@ -103,7 +103,7 @@ const createSlotMachine = (options) => {
 
 class SlotMachine {
   options = {}
-  el = null
+  element = null
 
   oSlotMachineUl = null
   oSlotMachineLi = null
@@ -111,22 +111,29 @@ class SlotMachine {
   colPlaying = false
   going = false
 
-  constructor(el, opt) {
-    if (!opt.list) {
-      console.warn("请传入奖品列表 list")
+  constructor(options) {
+    if (!options.element || typeof options.element !== 'string') {
+      console.error("SlotMachine init error: The variable type of 'element' should be a string")
       return
     }
-    this.options = defaultOption(opt)
+    if (!options.list || Object.prototype.toString.call(options.list) !== '[object Array]') {
+      console.error("SlotMachine init error: The variable type of 'list' should be an array")
+      return
+    }
+    this.options = defaultOption(options)
 
-    if (el.indexOf('#') === 0) {
-      this.el = document.getElementById(el)
-    } else if (el.indexOf('.') === 0) {
-      this.el = document.querySelector(el)
+    if (options.element.indexOf('#') === 0) {
+      this.element = document.getElementById(options.element)
+    } else if (options.element.indexOf('.') === 0) {
+      this.element = document.querySelector(options.element)
     }
 
-    if (this.el) {
-      this.el.appendChild(createSlotMachine(this.options))
+    if (!this.element) {
+      console.error("lottery init error: Unable to get dom element: " + options.element)
+      return
     }
+
+    this.element.appendChild(createSlotMachine(this.options))
   }
 
 
@@ -143,6 +150,7 @@ class SlotMachine {
       console.warn('go function warning: Call repeatedly')
       return
     };
+
     this.going = true;
 
     const aCols = document.querySelectorAll('.slotMachine__col')

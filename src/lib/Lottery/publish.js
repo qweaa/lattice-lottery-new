@@ -5,7 +5,7 @@ import {
 class Lottery {
   name = ''
 
-  el = null
+  element = null
 
   options = {}
   isMoving = false
@@ -16,9 +16,49 @@ class Lottery {
   hasCircleTimes = 0
   hasMoveTimes = 0
 
+  createHtml = null
+
+  init(type, options, createHtml) {
+    if (!options.element || typeof options.element !== 'string') {
+      console.error("lottery init error: The variable type of 'element' should be a string")
+      return
+    }
+
+    this.options = this.defaultOption(options, type)
+    this.createHtml = createHtml
+
+    if (options.element.indexOf('#') === 0) {
+      this.element = document.getElementById(options.element)
+    } else if (options.element.indexOf('.') === 0) {
+      this.element = document.querySelector(options.element)
+    }
+
+    if (!this.element) {
+      console.error("lottery init error: Unable to get dom element: " + options.element)
+      return
+    }
+
+    this.name = getCode()
+
+    this.updateView()
+  }
+
+  updateView() {
+    if (this.element && typeof this.createHtml === 'function') {
+      this.element.innerHTML = this.createHtml({
+        name: this.name,
+        list: this.options._list,
+        listIndex: this.listIndex,
+        btnText: this.options.btnText,
+        onsubmit: this.options.onsubmit,
+      })
+    } else {
+      console.error("lottery error: An exception that cannot be handled")
+    }
+  }
+
   defaultOption(opt, type) {
     if (Object.prototype.toString.call(opt) !== '[object Object]') opt = {}
-    this.name = getCode()
 
     const options = {
       list: [],
@@ -79,7 +119,6 @@ class Lottery {
         }
         this.hasMoveTimes++ //记录跳动了多少次
         this.updateView()
-        // if (typeof updateView === 'function') updateView.call(this)
         this.start(speed) //递归
       } else { //转圈次数已经达到
         if (this.listIndex < this.luckyIndex) { //如果当前cur位置没到中奖位置，继续跳
@@ -120,7 +159,7 @@ class Lottery {
       return
     }
 
-
+    this.isMoving = true
     this.luckyIndex = luckyIndex //中奖索引
     this.hasCircleTimes = 0 //初始化转圈圈数
     if (this.listIndex === null) this.listIndex = 0
@@ -128,7 +167,6 @@ class Lottery {
     if (typeof this.options.onstart === 'function') this.options.onstart()
     this.updateView()
     this.start(this.baseSpeed) //开始动画
-    this.isMoving = true
   }
 }
 

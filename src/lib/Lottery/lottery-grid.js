@@ -66,32 +66,11 @@ const createHtml = ({
 
 class LotteryGrid extends Lottery {
 
-  constructor(el, ops) {
+  constructor(options) {
     super()
 
-    this.options = this.defaultOption(ops)
-
-    if (el.indexOf('#') === 0) {
-      this.el = document.getElementById(el)
-    } else if (el.indexOf('.') === 0) {
-      this.el = document.querySelector(el)
-    }
-
-    this.updateView()
+    this.init('grid', options, createHtml)
   }
-
-  updateView() {
-    if (this.el) {
-      this.el.innerHTML = createHtml({
-        name: this.name,
-        list: this.options._list,
-        listIndex: this.listIndex,
-        btnText: this.options.btnText,
-        onsubmit: this.options.onsubmit,
-      })
-    }
-  }
-
 }
 
 export default LotteryGrid

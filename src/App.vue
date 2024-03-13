@@ -1,12 +1,13 @@
 <script setup>
 import { onMounted } from 'vue'
-import {SlotMachine, LotteryGrid, LotteryList} from '@/lib'
+import {SlotMachine, LotteryGrid, LotteryList, Turntable} from '@/lib'
 // import SlotMachine from '/dist/SlotMachine'
 import { getAssetsFile } from '@/utils'
 
 let oSlotMachine = null
 let oLotteryGrid = null
 let oLotteryList = null
+let oTurntable = null
 
 const list = [
   {
@@ -40,14 +41,13 @@ const list = [
 ]
 
 onMounted(() => {
-  oSlotMachine = new SlotMachine('.SlotMachine', {
+  oSlotMachine = new SlotMachine({
+    element: '.SlotMachine',
     list,
-    onend: (val) => {
-      console.log("结束", val)
-    }
   })
 
-  oLotteryGrid = new LotteryGrid('.LotteryGrid', {
+  oLotteryGrid = new LotteryGrid({
+    element: '.LotteryGrid',
     list,
     onend: (val) => {
       console.log("结束", val)
@@ -56,13 +56,26 @@ onMounted(() => {
       oLotteryGrid.go(4)
     }
   })
-  oLotteryList = new LotteryList('.LotteryList', {
+  oLotteryList = new LotteryList({
+    element: '.LotteryList',
     list,
     onend: (val) => {
       console.log("结束", val)
     },
     onsubmit: () => {
       oLotteryList.go(4)
+    }
+  })
+  oTurntable = new Turntable({
+    element: '.Turntable',
+    list: list.slice(0, 6),
+    tableBg: getAssetsFile("/src/assets/images/tableBg.png"),
+    tableBtn: getAssetsFile("/src/assets/images/tableBtn.png"),
+    onend: (data) => {
+      console.log("结束：", data)
+    },
+    onsubmit: () => {
+      play4()
     }
   })
 })
@@ -85,6 +98,12 @@ const play3 = () => {
     oLotteryList.go(2)
   }
 }
+const play4 = () => {
+  if (oTurntable) {
+    console.log(oTurntable)
+    oTurntable.go(2)
+  }
+}
 </script>
 
 <template>
@@ -101,6 +120,11 @@ const play3 = () => {
 
     <div class="LotteryList"></div>
     <div @click="play3" class="LotteryList">go</div>
+
+    <hr />
+
+    <div class="Turntable"></div>
+    <div @click="play4" class="Turntable">go</div>
   </div>
 </template>
 
