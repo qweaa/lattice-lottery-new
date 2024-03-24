@@ -1,36 +1,41 @@
 {
-  "name": "lattice-lottery",
-  "private": true,
+  "name": "lattice-lottery-test",
+  "private": false,
   "version": "0.0.1-0",
   "type": "module",
-  "sideEffects": [
-    "**/*.css"
-  ],
+  "keywords": ["lottery", "九宫格", "大转盘", "老虎机", "抽奖组件"],
   "scripts": {
     "dev": "vite --host",
     "build": "vite build",
     "preview": "vite preview",
-    "lib": "deploy.sh"
+    "lib": "deploy.sh",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:serve": "vitepress serve docs"
   },
   "files": [
     "dist"
   ],
-  "main": "./dist/index.es.js",
-  "module": "./dist/index.umd.js",
+  "main": "./dist/index.umd.js",
+  "module": "./dist/index.es.js",
   "exports": {
-    "SlotMachine": {
+    ".": {
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.umd.js"
+    },
+    "./SlotMachine": {
       "import": "./dist/SlotMachine.es.js",
       "require": "./dist/SlotMachine.umd.js"
     },
-    "LotteryGrid": {
+    "./LotteryGrid": {
       "import": "./dist/LotteryGrid.es.js",
       "require": "./dist/LotteryGrid.umd.js"
     },
-    "LotteryList": {
+    "./LotteryList": {
       "import": "./dist/LotteryList.es.js",
       "require": "./dist/LotteryList.umd.js"
     },
-    "Turntable": {
+    "./Turntable": {
       "import": "./dist/Turntable.es.js",
       "require": "./dist/Turntable.umd.js"
     }
@@ -40,10 +45,14 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.5.2",
+    "element-plus": "^2.6.1",
+    "less": "^4.2.0",
+    "less-loader": "^12.2.0",
     "markdown-pdf": "^11.0.0",
     "vconsole": "^3.15.1",
     "vite": "^5.0.8",
     "vite-plugin-build": "^0.10.0",
-    "vite-plugin-css-injected-by-js": "^3.4.0"
+    "vite-plugin-css-injected-by-js": "^3.4.0",
+    "vitepress": "^1.0.0-rc.45"
   }
 }
