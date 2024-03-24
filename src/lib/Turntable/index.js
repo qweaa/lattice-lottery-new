@@ -38,6 +38,14 @@ class Turntable {
       console.error("SlotMachine init error: The variable type of 'list' should be an array")
       return
     }
+    if (!options.tableBg) {
+      console.error("SlotMachine init error: The tableBg field cannot be null")
+      return
+    }
+    if (!options.tableBtn) {
+      console.error("SlotMachine init error: The tableBtn field cannot be null")
+      return
+    }
     this.options = defaultOption(options)
     const listLength = this.options.list.length
     this.listLength = listLength
