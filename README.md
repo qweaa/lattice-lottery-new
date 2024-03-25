@@ -1,4 +1,4 @@
-# lattice-lottery-plus
+# lattice-lottery-new
 
 兼容Vue、react、微信小程序等框架的活动抽奖组件
 
@@ -6,12 +6,12 @@
 
 ```sh
 # 安装
-npm install lattice-lottery-plus --save
+npm install lattice-lottery-new --save
 ```
 
 ```js
 // 按需引入
-import LotteryGrid from 'lattice-lottery-plus/LotteryGrid'
+import LotteryGrid from 'lattice-lottery-new/LotteryGrid'
 
 const list = [
   {

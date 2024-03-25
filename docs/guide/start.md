@@ -10,7 +10,7 @@
 npm install lattice-lottery --save
 
 # vue3
-npm install lattice-lottery-plus --save
+npm install lattice-lottery-new --save
 
 ```
 
@@ -47,8 +47,8 @@ import {
   LotteryGrid,
   LotteryList,
   SlotMachine
-} from 'lattice-lottery-plus'
-import 'lattice-lottery-plus/lib/lattice-lottery.css'
+} from 'lattice-lottery-new'
+import 'lattice-lottery-new/lib/lattice-lottery.css'
 
 createApp(App).use(LotteryGrid).use(LotteryList).use(SlotMachine).mount('#app')
 

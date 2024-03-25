@@ -8,12 +8,12 @@ import Home from './components/Home/index.vue'
 
 ```sh
 # 安装
-npm install lattice-lottery-plus --save
+npm install lattice-lottery-new --save
 ```
 
 ```js
 // 按需引入
-import LotteryGrid from 'lattice-lottery-plus/LotteryGrid'
+import LotteryGrid from 'lattice-lottery-new/LotteryGrid'
 
 const list = [
   {
