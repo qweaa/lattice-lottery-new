@@ -1,19 +1,19 @@
 <script setup>
-import Home from '../src/vitepress/components/home.vue'
+import Home from './components/Home/index.vue'
 </script>
 
 <Home />
 
-## 简单开始
+## 快速开始
 
 ```sh
 # 安装
-npm install lattice-lottery --save
+npm install lattice-lottery-plus --save
 ```
 
 ```js
 // 按需引入
-import LotteryGrid from 'lattice-lottery/LotteryGrid'
+import LotteryGrid from 'lattice-lottery-plus/LotteryGrid'
 
 const list = [
   {
@@ -40,9 +40,6 @@ const list = [
   {
     label: "8等奖",
   },
-  {
-    label: "9等奖",
-  },
 ]
 
 // 初始化
@@ -53,7 +50,7 @@ oLotteryGrid = new LotteryGrid({
     console.log("结束", val)
   },
   onsubmit: () => {
-    oLotteryGrid.go(4)
+    oLotteryGrid.go(4) // index position, start at 0
   }
 })
 ```

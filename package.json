@@ -3,7 +3,13 @@
   "private": false,
   "version": "0.0.1-0",
   "type": "module",
-  "keywords": ["lottery", "九宫格", "大转盘", "老虎机", "抽奖组件"],
+  "keywords": [
+    "lottery",
+    "九宫格",
+    "大转盘",
+    "老虎机",
+    "抽奖组件"
+  ],
   "scripts": {
     "dev": "vite --host",
     "build": "vite build",
@@ -41,18 +47,17 @@
     }
   },
   "dependencies": {
+    "vitepress-demoblock": "^1.0.4",
     "vue": "^3.3.11"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.5.2",
-    "element-plus": "^2.6.1",
     "less": "^4.2.0",
     "less-loader": "^12.2.0",
-    "markdown-pdf": "^11.0.0",
     "vconsole": "^3.15.1",
     "vite": "^5.0.8",
     "vite-plugin-build": "^0.10.0",
     "vite-plugin-css-injected-by-js": "^3.4.0",
-    "vitepress": "^1.0.0-rc.45"
+    "vitepress": "1.0.0-alpha.22"
   }
 }
