@@ -1,23 +1,54 @@
-# WzlReport
+# lattice-lottery-plus
 
-埋点工具
+兼容Vue、react、微信小程序等框架的活动抽奖组件
 
-## 启动
+## 快速开始
 
-``` sh
-npm run dev
+```sh
+# 安装
+npm install lattice-lottery-plus --save
 ```
 
-## 构建
+```js
+// 按需引入
+import LotteryGrid from 'lattice-lottery-plus/LotteryGrid'
 
-``` sh
-npm version prepatch
-npm build
+const list = [
+  {
+    label: "华为Mate 60 Pro+",
+  },
+  {
+    label: "1000元现金红包",
+  },
+  {
+    label: "三等奖",
+  },
+  {
+    label: "500元现金红包",
+  },
+  {
+    label: "谢谢参与",
+  },
+  {
+    label: "六等奖",
+  },
+  {
+    label: "7等奖",
+  },
+  {
+    label: "8等奖",
+  },
+]
+
+// 初始化
+oLotteryGrid = new LotteryGrid({
+  element: '.LotteryGrid', // dom class name or id name
+  list,
+  onend: (val) => {
+    console.log("结束", val)
+  },
+  onsubmit: () => {
+    oLotteryGrid.go(4) // index position, start at 0
+  }
+})
 ```
-
-- `npm version prerelease` package.json 中的版本号1.0.0变为 1.0.1-0 或者 1.0.1-0变为1.0.1-1 一般是指修复版本
-- `npm version prepatch` package.json 中的版本号1.0.1-1变为 1.0.2-0 一般是指需求版本
-- `npm version preminor` package.json 中的版本号1.0.2-0变为 1.1.0-0 一般是指功能版本
-- `npm version premajor` package.json 中的版本号1.1.0-0变为 2.0.0-0 一般是指改版
-
-执行 `npm version` 命令前需要先提交所有变更（1. `git add .` 2. `git commit -m "deploy"`）。
