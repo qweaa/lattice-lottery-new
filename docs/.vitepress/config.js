@@ -23,18 +23,6 @@ export default defineConfig({
         })();
       `
     ] : '',
-    ['style', {}, `
-      .demo {
-        border: 1px solid #eaeaea !important;
-        border-radius: 8px;
-      }
-      .demo-control {
-        border-top: 1px solid #eaeaea !important;
-      }
-      .demo-show-copy, .demo-show-copied::before {
-        background-color: #292d3e !important;
-      }
-    `]
   ],
   markdown: {
     config: (md) => {
