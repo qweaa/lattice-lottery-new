@@ -10,8 +10,8 @@ export default {
     app.component('demo', demo)
     app.component('OptionTable', OptionTable)
     router.onBeforeRouteChange = (to) => {
-      if (typeof window._hmt !== 'undefined') {
-        window._hmt.push(['_trackPageview', to]);
+      if (typeof _hmt !== 'undefined') {
+        _hmt.push(['_trackPageview', to]);
       }
     };
   }

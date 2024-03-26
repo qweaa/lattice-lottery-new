@@ -7,6 +7,7 @@ import demoblock from 'vitepress-demoblock';
 export default defineConfig({
   base: '/lattice-lottery-new/',
   title: 'lattice-lottery-new',
+  lang: 'zh-CN',
   description: '兼容Vue、react、微信小程序等框架的活动抽奖组件',
   head: [
     isProd ? [
@@ -21,27 +22,28 @@ export default defineConfig({
           s.parentNode.insertBefore(hm, s);
         })();
       `
-    ] : ''
+    ] : '',
+    ['style', {}, `
+      .demo {
+        border: 1px solid #eaeaea !important;
+        border-radius: 8px;
+      }
+      .demo-control {
+        border-top: 1px solid #eaeaea !important;
+      }
+      .demo-show-copy, .demo-show-copied::before {
+        background-color: #292d3e !important;
+      }
+    `]
   ],
   markdown: {
     config: (md) => {
       md.use(demoblock)
     }
   },
-  locales: {
-    '/': {
-      lang: 'zh-CN',
-    }
-  },
   themeConfig: {
-    displayAllHeaders: true,
     search: {
-      provider: 'algolia',
-      options: {
-        appId: '...',
-        apiKey: '...',
-        indexName: '...'
-      }
+      provider: 'local'
     },
     nav: [{
       text: 'GitHub',

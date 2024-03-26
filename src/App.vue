@@ -1,8 +1,8 @@
 <script setup>
 import { onMounted } from 'vue'
-import {SlotMachine, LotteryGrid, LotteryList, Turntable} from '@/lib'
+import {SlotMachine, LotteryGrid, LotteryList, Turntable} from './lib'
 // import SlotMachine from '/dist/SlotMachine'
-import { getAssetsFile } from '@/utils'
+import { getAssetsFile } from './utils'
 
 let oSlotMachine = null
 let oLotteryGrid = null

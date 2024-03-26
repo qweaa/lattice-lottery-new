@@ -26,8 +26,8 @@ onMounted(() => {
   const oLottery = new Turntable({
     element: '.lottery',
     list,
-    tableBg: '/tableBg.png',
-    tableBtn: '/tableBtn.png',
+    tableBg: '/lattice-lottery-new/tableBg.png',
+    tableBtn: '/lattice-lottery-new/tableBtn.png',
     onend: (e) => {
       alert(e.label)
     },

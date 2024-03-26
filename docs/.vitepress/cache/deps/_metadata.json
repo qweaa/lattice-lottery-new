@@ -1,29 +1,50 @@
 {
-  "hash": "2a77edfd",
-  "configHash": "595157be",
+  "hash": "500cb339",
+  "configHash": "4b91453c",
   "lockfileHash": "e3b0c442",
-  "browserHash": "d700d8e4",
+  "browserHash": "eba58e9f",
   "optimized": {
     "vue": {
       "src": "../../../../node_modules/_vue@3.4.21@vue/dist/vue.runtime.esm-bundler.js",
       "file": "vue.js",
-      "fileHash": "84badc0c",
+      "fileHash": "c9267c47",
       "needsInterop": false
     },
     "vitepress > @vue/devtools-api": {
-      "src": "../../../../node_modules/_@vue_devtools-api@7.0.20@@vue/devtools-api/dist/index.js",
+      "src": "../../../../node_modules/_@vue_devtools-api@7.0.21@@vue/devtools-api/dist/index.js",
       "file": "vitepress___@vue_devtools-api.js",
-      "fileHash": "6a9c9e1c",
+      "fileHash": "da847a10",
       "needsInterop": false
     },
     "vitepress > @vueuse/core": {
       "src": "../../../../node_modules/_@vueuse_core@10.9.0@@vueuse/core/index.mjs",
       "file": "vitepress___@vueuse_core.js",
-      "fileHash": "c66fa6b9",
+      "fileHash": "93a3da2c",
+      "needsInterop": false
+    },
+    "vitepress > @vueuse/integrations/useFocusTrap": {
+      "src": "../../../../node_modules/_@vueuse_integrations@10.9.0@@vueuse/integrations/useFocusTrap.mjs",
+      "file": "vitepress___@vueuse_integrations_useFocusTrap.js",
+      "fileHash": "24773239",
+      "needsInterop": false
+    },
+    "vitepress > mark.js/src/vanilla.js": {
+      "src": "../../../../node_modules/_mark.js@8.11.1@mark.js/src/vanilla.js",
+      "file": "vitepress___mark__js_src_vanilla__js.js",
+      "fileHash": "f555ae46",
+      "needsInterop": false
+    },
+    "vitepress > minisearch": {
+      "src": "../../../../node_modules/_minisearch@6.3.0@minisearch/dist/es/index.js",
+      "file": "vitepress___minisearch.js",
+      "fileHash": "0eaff09c",
       "needsInterop": false
     }
   },
   "chunks": {
+    "chunk-LLKAKDVB": {
+      "file": "chunk-LLKAKDVB.js"
+    },
     "chunk-TASASEWC": {
       "file": "chunk-TASASEWC.js"
     }

@@ -1,9 +1,9 @@
-import SlotMachine from "@/lib/SlotMachine"; // 引入封装好的组件
+import SlotMachine from "./SlotMachine"; // 引入封装好的组件
 
-import LotteryGrid from '@/lib/Lottery/lottery-grid'
-import LotteryList from '@/lib/Lottery/lottery-list'
+import LotteryGrid from './Lottery/lottery-grid'
+import LotteryList from './Lottery/lottery-list'
 
-import Turntable from '@/lib/Turntable'
+import Turntable from './Turntable'
 
 export {
   SlotMachine,

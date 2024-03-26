@@ -63,14 +63,13 @@ export default defineConfig({
           },
         ],
       },
-    })
+    }),
   ],
   css: {
     // css预处理器
     preprocessorOptions: {
       less: {
         charset: false,
-        // additionalData: '@import "./src/assets/style/global.less";',
       },
     },
   },

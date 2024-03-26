@@ -81,9 +81,9 @@
 
 ## 执行动画
 
-```js{2}
+```js
 const oLottery = new LotteryGrid({...})
-oLottery.go(1)
+oLottery.go(1) // [!code focus]
 ```
 
 当调用组件对象的`go`函数之后，组件便会开始执行抽奖动画。

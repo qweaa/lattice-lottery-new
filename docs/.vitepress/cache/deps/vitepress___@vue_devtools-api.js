@@ -4,7 +4,7 @@ import {
   toRaw
 } from "./chunk-TASASEWC.js";
 
-// node_modules/_@vue_devtools-shared@7.0.20@@vue/devtools-shared/dist/index.js
+// node_modules/_@vue_devtools-shared@7.0.21@@vue/devtools-shared/dist/index.js
 var __create = Object.create;
 var __defProp = Object.defineProperty;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
@@ -34,7 +34,7 @@ var __toESM = (mod, isNodeMode, target2) => (target2 = mod != null ? __create(__
   mod
 ));
 var init_esm_shims = __esm({
-  "../../node_modules/.pnpm/tsup@8.0.2_postcss@8.4.35_typescript@5.4.2/node_modules/tsup/assets/esm_shims.js"() {
+  "../../node_modules/.pnpm/tsup@8.0.2_postcss@8.4.38_typescript@5.4.3/node_modules/tsup/assets/esm_shims.js"() {
     "use strict";
   }
 });
@@ -252,6 +252,7 @@ var target = typeof globalThis !== "undefined" ? globalThis : typeof window !== 
 var isInChromePanel = typeof target.chrome !== "undefined" && !!target.chrome.devtools;
 var isInIframe = isBrowser && target.self !== target.top;
 var isInElectron = typeof navigator !== "undefined" && navigator.userAgent.toLowerCase().includes("electron");
+var isNuxtApp = typeof window !== "undefined" && !!window.__NUXT__;
 init_esm_shims();
 var import_rfdc = __toESM(require_rfdc(), 1);
 var deepClone = (0, import_rfdc.default)({ circles: true });
@@ -519,7 +520,7 @@ async function _applyPromised(fn, _this, args) {
   return await fn.apply(_this, args);
 }
 
-// node_modules/_@vue_devtools-kit@7.0.20@@vue/devtools-kit/dist/index.js
+// node_modules/_@vue_devtools-kit@7.0.21@@vue/devtools-kit/dist/index.js
 var __create2 = Object.create;
 var __defProp2 = Object.defineProperty;
 var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
@@ -549,7 +550,7 @@ var __toESM2 = (mod, isNodeMode, target9) => (target9 = mod != null ? __create2(
   mod
 ));
 var init_esm_shims2 = __esm2({
-  "../../node_modules/.pnpm/tsup@8.0.2_postcss@8.4.35_typescript@5.4.2/node_modules/tsup/assets/esm_shims.js"() {
+  "../../node_modules/.pnpm/tsup@8.0.2_postcss@8.4.38_typescript@5.4.3/node_modules/tsup/assets/esm_shims.js"() {
     "use strict";
   }
 });
