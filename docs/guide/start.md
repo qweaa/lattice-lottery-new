@@ -1,73 +1,52 @@
 # 快速开始
 
-直接开始
+## 安装依赖
 
-## 安装
-
-``` sh
-
-# vue2
-npm install lattice-lottery --save
-
-# vue3
+```sh
 npm install lattice-lottery-new --save
-
 ```
 
-## 注册
+## 按需引入
 
-- vue2项目
+```js
+import LotteryGrid from 'lattice-lottery-new/LotteryGrid'
 
-``` javascript
+const list = [
+  {
+    label: "华为Mate 60 Pro+",
+  },
+  {
+    label: "1000元现金红包",
+  },
+  {
+    label: "三等奖",
+  },
+  {
+    label: "500元现金红包",
+  },
+  {
+    label: "谢谢参与",
+  },
+  {
+    label: "六等奖",
+  },
+  {
+    label: "7等奖",
+  },
+  {
+    label: "8等奖",
+  },
+]
 
-// vue2 main.js
-import Vue from 'vue'
-import {
-  LotteryGrid,
-  LotteryList,
-  SlotMachine
-} from 'lattice-lottery'
-import 'lattice-lottery/lib/lattice-lottery.css'
-
-Vue.use(LotteryGrid)
-Vue.use(LotteryList)
-Vue.use(SlotMachine)
-
+// 初始化
+oLotteryGrid = new LotteryGrid({
+  element: '.LotteryGrid', // dom class name or id name
+  list,
+  onend: (val) => {
+    console.log("结束", val)
+  },
+  onsubmit: () => {
+    oLotteryGrid.go(4) // index position, start at 0
+  }
+})
 ```
-
-- vue3项目
-
-``` javascript
-
-// vue3 main.js
-import { createApp } from 'vue'
-import App from './App.vue'
-
-import {
-  LotteryGrid,
-  LotteryList,
-  SlotMachine
-} from 'lattice-lottery-new'
-import 'lattice-lottery-new/lib/lattice-lottery.css'
-
-createApp(App).use(LotteryGrid).use(LotteryList).use(SlotMachine).mount('#app')
-
-```
-
-## 使用
-
-参考Demo文档 [传送门](/lattice-lottery/demo)
-
-## 效果图
-
-lottery-grid
-
-<img src="../.vuepress/public/images/lattice_lottery_logo.png" style="width: 330px; height=330px" />
-
-lottery-list
-
-<img src="../.vuepress/public/images/lottery_list.png" style="width: 330px; height=460px" />
-
-slot-machine
-
-<img src="../.vuepress/public/images/slot_machine.png" style="width: 520px; height=550px" />

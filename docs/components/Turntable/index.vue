@@ -1,6 +1,6 @@
 <script setup>
 import { onMounted } from 'vue';
-import LotteryGrid from 'lattice-lottery-new/LotteryGrid'
+import Turntable from 'lattice-lottery-new/Turntable'
 const list = [
   {
     label: "华为Mate 60 Pro+",
@@ -19,22 +19,15 @@ const list = [
   },
   {
     label: "六等奖",
-  },
-  {
-    label: "7等奖",
-  },
-  {
-    label: "8等奖",
-  },
-  {
-    label: "9等奖",
-  },
+  }
 ]
 
 onMounted(() => {
-  const oLottery = new LotteryGrid({
+  const oLottery = new Turntable({
     element: '.lottery',
     list,
+    tableBg: '/tableBg.png',
+    tableBtn: '/tableBtn.png',
     onend: (e) => {
       alert(e.label)
     },

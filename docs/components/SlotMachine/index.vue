@@ -1,6 +1,6 @@
 <script setup>
 import { onMounted } from 'vue';
-import LotteryGrid from 'lattice-lottery-new/LotteryGrid'
+import SlotMachine from 'lattice-lottery-new/SlotMachine'
 const list = [
   {
     label: "华为Mate 60 Pro+",
@@ -30,29 +30,39 @@ const list = [
     label: "9等奖",
   },
 ]
+let oLottery = null
 
 onMounted(() => {
-  const oLottery = new LotteryGrid({
+  oLottery = new SlotMachine({
     element: '.lottery',
     list,
     onend: (e) => {
-      alert(e.label)
+      alert(e)
     },
     onsubmit: () => {
-      oLottery.go(2)
     }
   })
 })
 
+const onsubmit = () => {
+  if (oLottery) oLottery.go([1,2,3])
+}
+
 </script>
 
 <template>
-  <div class="lottery"></div>
+  <div class="box">
+    <div class="lottery"></div>
+    <br />
+    <div @click="onsubmit" class="lottery-btn">抽奖</div>
+  </div>
 </template>
 
 <style lang="less" scoped>
-.lottery {
+.box {
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 </style>

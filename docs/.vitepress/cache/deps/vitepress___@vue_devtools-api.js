@@ -4,7 +4,7 @@ import {
   toRaw
 } from "./chunk-TASASEWC.js";
 
-// node_modules/_@vue_devtools-shared@7.0.17@@vue/devtools-shared/dist/index.js
+// node_modules/_@vue_devtools-shared@7.0.20@@vue/devtools-shared/dist/index.js
 var __create = Object.create;
 var __defProp = Object.defineProperty;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
@@ -519,7 +519,7 @@ async function _applyPromised(fn, _this, args) {
   return await fn.apply(_this, args);
 }
 
-// node_modules/_@vue_devtools-kit@7.0.17@@vue/devtools-kit/dist/index.js
+// node_modules/_@vue_devtools-kit@7.0.20@@vue/devtools-kit/dist/index.js
 var __create2 = Object.create;
 var __defProp2 = Object.defineProperty;
 var __getOwnPropDesc2 = Object.getOwnPropertyDescriptor;
@@ -2392,7 +2392,8 @@ function initStateFactory() {
     tabs: [],
     commands: [],
     vitePluginDetected: false,
-    activeAppRecordId: null
+    activeAppRecordId: null,
+    highPerfModeEnabled: false
   };
 }
 var _a4;
@@ -2566,6 +2567,7 @@ function onDevToolsClientConnected(fn) {
     });
   });
 }
+init_esm_shims2();
 export {
   addCustomCommand,
   addCustomTab,

@@ -1,14 +1,13 @@
 import {
   defineConfig
 } from 'vitepress'
-import path from 'path'
 const isProd = process.env.NODE_ENV === 'production'
 import demoblock from 'vitepress-demoblock';
 
 export default defineConfig({
-  base: '/lattice-lottery/',
-  title: 'lattice-lottery',
-  description: '基于Vue的九宫格抽奖组件',
+  base: '/lattice-lottery-new/',
+  title: 'lattice-lottery-new',
+  description: '兼容Vue、react、微信小程序等框架的活动抽奖组件',
   head: [
     isProd ? [
       'script',
@@ -36,23 +35,26 @@ export default defineConfig({
   },
   themeConfig: {
     displayAllHeaders: true,
-    nav: [{
-        text: '指南',
-        link: '/guide/'
-      },
-      {
-        text: 'Demo',
-        link: '/demo/'
-      }, {
-        text: 'GitHub',
-        link: 'https://github.com/h5-group/lattice-lottery'
+    search: {
+      provider: 'algolia',
+      options: {
+        appId: '...',
+        apiKey: '...',
+        indexName: '...'
       }
-    ],
+    },
+    nav: [{
+      text: 'GitHub',
+      link: 'https://github.com/qweaa/lattice-lottery-new'
+    }],
     sidebar: [{
       text: '指南',
       items: [{
           text: '介绍',
           link: '/guide/'
+        }, {
+          text: '快速开始',
+          link: '/guide/start.html'
         },
         {
           text: '版本日志',
@@ -66,16 +68,33 @@ export default defineConfig({
     }, {
       text: '九宫格',
       items: [{
-        text: '介绍',
-        link: '/lottery/'
+        text: 'LotteryGrid',
+        link: '/lottery-grid/'
+      }, ]
+    }, {
+      text: '宫格抽奖',
+      items: [{
+        text: 'LotteryList',
+        link: '/lottery-list/'
+      }, ]
+    }, {
+      text: '老虎机',
+      items: [{
+        text: 'SlotMachine',
+        link: '/slot-machine/'
+      }, ]
+    }, {
+      text: '大转盘',
+      items: [{
+        text: 'Turntable',
+        link: '/turntable/'
+      }, ]
+    }, {
+      text: 'Demo',
+      items: [{
+        text: '九宫格抽奖',
+        link: '/demo/'
       }, ]
     }]
   },
-  configureWebpack: {
-    resolve: {
-      alias: {
-        '@images': path.resolve(__dirname, './public/images')
-      }
-    }
-  }
 })

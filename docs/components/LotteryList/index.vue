@@ -1,6 +1,6 @@
 <script setup>
 import { onMounted } from 'vue';
-import LotteryGrid from 'lattice-lottery-new/LotteryGrid'
+import LotteryList from 'lattice-lottery-new/LotteryList'
 const list = [
   {
     label: "华为Mate 60 Pro+",
@@ -32,7 +32,7 @@ const list = [
 ]
 
 onMounted(() => {
-  const oLottery = new LotteryGrid({
+  const oLottery = new LotteryList({
     element: '.lottery',
     list,
     onend: (e) => {

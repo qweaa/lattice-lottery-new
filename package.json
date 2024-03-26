@@ -47,6 +47,7 @@
     }
   },
   "dependencies": {
+    "lattice-lottery-new": "^1.0.0-0",
     "vitepress-demoblock": "^1.0.4",
     "vue": "^3.3.11"
   },
@@ -54,7 +55,6 @@
     "@vitejs/plugin-vue": "^4.5.2",
     "less": "^4.2.0",
     "less-loader": "^12.2.0",
-    "vconsole": "^3.15.1",
     "vite": "^5.0.8",
     "vite-plugin-build": "^0.10.0",
     "vite-plugin-css-injected-by-js": "^3.4.0",
