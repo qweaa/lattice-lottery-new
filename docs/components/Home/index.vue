@@ -3,7 +3,7 @@
     <div class="home__logo"></div>
     <div class="home__name">lattice-lottery-new</div>
     <div class="home__desc">兼容Vue、react、微信小程序等框架的活动抽奖组件</div>
-    <a href="/lattice-lottery/guide/" class="home__go">快速了解</a>
+    <a href="/lattice-lottery-new/guide/" class="home__go">快速了解</a>
   </div>
 </template>
 <script>

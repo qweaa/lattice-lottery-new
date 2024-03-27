@@ -23,6 +23,10 @@ export default defineConfig({
         })();
       `
     ] : '',
+    ["link", {
+      href: "/lattice-lottery-new/lattice.ico",
+      rel: "icon"
+    }]
   ],
   markdown: {
     config: (md) => {
