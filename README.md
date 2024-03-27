@@ -2,6 +2,10 @@
 
 兼容Vue、react、微信小程序等框架的活动抽奖组件
 
+## 文档地址
+
+[lattice-lottery-new](https://qweaa.github.io/lattice-lottery-new/?from=github)
+
 ## 快速开始
 
 ```sh
