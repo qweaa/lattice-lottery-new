@@ -28,7 +28,7 @@ class Lottery {
     this.createHtml = createHtml
 
     if (options.element.indexOf('#') === 0) {
-      this.element = document.getElementById(options.element)
+      this.element = document.getElementById(options.element.slice(1))
     } else if (options.element.indexOf('.') === 0) {
       this.element = document.querySelector(options.element)
     }

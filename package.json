@@ -46,18 +46,17 @@
       "require": "./dist/Turntable.umd.js"
     }
   },
-  "dependencies": {
-    "lattice-lottery-new": "^1.0.0-0",
-    "vitepress-demoblock": "^1.0.4",
-    "vue": "^3.3.11"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.5.2",
+    "lattice-lottery-new": "^1.0.0-0",
     "less": "^4.2.0",
     "less-loader": "^12.2.0",
     "vite": "^5.0.8",
+    "vitepress-demoblock": "^1.0.4",
     "vite-plugin-build": "^0.10.0",
     "vite-plugin-css-injected-by-js": "^3.4.0",
-    "vitepress": "1.0.0-alpha.22"
+    "vitepress": "1.0.0-alpha.22",
+    "vue": "^3.3.11"
   }
 }

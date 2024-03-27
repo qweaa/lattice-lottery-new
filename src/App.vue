@@ -42,12 +42,12 @@ const list = [
 
 onMounted(() => {
   oSlotMachine = new SlotMachine({
-    element: '.SlotMachine',
+    element: '#SlotMachine',
     list,
   })
 
   oLotteryGrid = new LotteryGrid({
-    element: '.LotteryGrid',
+    element: '#LotteryGrid',
     list,
     onend: (val) => {
       console.log("结束", val)
@@ -57,7 +57,7 @@ onMounted(() => {
     }
   })
   oLotteryList = new LotteryList({
-    element: '.LotteryList',
+    element: '#LotteryList',
     list,
     onend: (val) => {
       console.log("结束", val)
@@ -67,7 +67,7 @@ onMounted(() => {
     }
   })
   oTurntable = new Turntable({
-    element: '.Turntable',
+    element: '#Turntable',
     list: list.slice(0, 6),
     tableBg: getAssetsFile("/src/assets/images/tableBg.png"),
     tableBtn: getAssetsFile("/src/assets/images/tableBtn.png"),
@@ -108,22 +108,22 @@ const play4 = () => {
 
 <template>
   <div>
-    <div class="SlotMachine"></div>
+    <div id="SlotMachine"></div>
     <div @click="play" class="SlotMachine">go</div>
 
     <hr />
 
-    <div class="LotteryGrid"></div>
+    <div id="LotteryGrid"></div>
     <div @click="play2" class="LotteryGrid">go</div>
     
     <hr />
 
-    <div class="LotteryList"></div>
+    <div id="LotteryList"></div>
     <div @click="play3" class="LotteryList">go</div>
 
     <hr />
 
-    <div class="Turntable"></div>
+    <div id="Turntable"></div>
     <div @click="play4" class="Turntable">go</div>
   </div>
 </template>
