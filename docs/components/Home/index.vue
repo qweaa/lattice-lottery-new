@@ -24,7 +24,7 @@ export default {
 .home__logo {
   width: 330px;
   height: 330px;
-  background-image: url("../images/lattice_lottery_logo.png");
+  background-image: url("/lattice-lottery-new/logo.png");
   background-repeat: no-repeat;
   background-size: 100% 100%;
   margin-bottom: 44px;

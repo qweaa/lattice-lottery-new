@@ -34,6 +34,7 @@ export default defineConfig({
     }
   },
   themeConfig: {
+    logo: '/logo.png',
     search: {
       provider: 'local'
     },
