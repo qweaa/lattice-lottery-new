@@ -4,7 +4,7 @@
 
 ### 1.0.0-2（2024-4-1）
 
-1. 修复一些问题
+1. 修复老虎机querySelectorAll的问题
 
 ## Version History
 
