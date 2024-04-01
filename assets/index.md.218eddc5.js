@@ -1,0 +1,1 @@
+import e from"./chunks/index.f7b28378.js";import{o as t,c as a,a as o}from"./app.8555cd21.js";const i=JSON.parse('{"title":"","description":"","frontmatter":{"layout":"home"},"headers":[],"relativePath":"index.md"}'),r={name:"index.md"},d=Object.assign(r,{setup(n){return(s,c)=>(t(),a("div",null,[o(e)]))}});export{i as __pageData,d as default};
