@@ -5,9 +5,12 @@ import LotteryList from './Lottery/lottery-list'
 
 import Turntable from './Turntable'
 
+import SpinCard from './SpinCard'
+
 export {
   SlotMachine,
   LotteryGrid,
   LotteryList,
   Turntable,
-} //实现按需引入*
+  SpinCard,
+}

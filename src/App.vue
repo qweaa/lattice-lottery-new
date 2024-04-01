@@ -1,6 +1,6 @@
 <script setup>
 import { onMounted } from 'vue'
-import {SlotMachine, LotteryGrid, LotteryList, Turntable} from './lib'
+import {SlotMachine, LotteryGrid, LotteryList, Turntable, SpinCard} from './lib'
 // import SlotMachine from '/dist/SlotMachine'
 import { getAssetsFile } from './utils'
 
@@ -8,6 +8,7 @@ let oSlotMachine = null
 let oLotteryGrid = null
 let oLotteryList = null
 let oTurntable = null
+let oShinCard = null
 
 const list = [
   {
@@ -78,6 +79,41 @@ onMounted(() => {
       play4()
     }
   })
+  const hasDrawIndex = [2,3]
+  oShinCard = new SpinCard({
+    element: "#SpinCard",
+    hasDrawIndex,
+    list: [
+      {
+        front_image: getAssetsFile('/src/assets/images/SpinCard/bg.png'),
+        back_image: getAssetsFile('/src/assets/images/SpinCard/f1.png'),
+      }, {
+        front_image: getAssetsFile('/src/assets/images/SpinCard/bg.png'),
+        back_image: getAssetsFile('/src/assets/images/SpinCard/m1.png'),
+      }, {
+        front_image: getAssetsFile('/src/assets/images/SpinCard/bg.png'),
+        back_image: getAssetsFile('/src/assets/images/SpinCard/x1.png'),
+      }, {
+        front_image: getAssetsFile('/src/assets/images/SpinCard/bg.png'),
+        back_image: getAssetsFile('/src/assets/images/SpinCard/h1.png'),
+      }, {
+        front_image: getAssetsFile('/src/assets/images/SpinCard/bg.png'),
+        back_image: getAssetsFile('/src/assets/images/SpinCard/x2.png'),
+      }, {
+        front_image: getAssetsFile('/src/assets/images/SpinCard/bg.png'),
+        back_image: getAssetsFile('/src/assets/images/SpinCard/h2.png'),
+      },
+    ],
+    handImage: getAssetsFile('/src/assets/images/SpinCard/hand.png'),
+    onsubmit(val) {
+      console.log("点击了卡片：", val)
+      oShinCard.open(val)
+      // hasDrawIndex.push(val)
+      // oShinCard.update({
+      //   hasDrawIndex: hasDrawIndex,
+      // })
+    }
+  })
 })
 
 const play = () => {
@@ -104,6 +140,18 @@ const play4 = () => {
     oTurntable.go(2)
   }
 }
+const play5 = () => {
+  if (oShinCard) {
+    oShinCard.reset()
+  }
+}
+const play6 = () => {
+  if (oShinCard) {
+    oShinCard.update({
+      hasDrawIndex: [2,3,5],
+    })
+  }
+}
 </script>
 
 <template>
@@ -125,8 +173,16 @@ const play4 = () => {
 
     <div id="Turntable"></div>
     <div @click="play4" class="Turntable">go</div>
+
+    <hr />
+
+    <div id="SpinCard"></div>
+    <div @click="play5" class="SpinCard">重置</div>
+    <div @click="play6" class="SpinCard">update</div>
+
   </div>
 </template>
 
 <style scoped>
+
 </style>
