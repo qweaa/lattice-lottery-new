@@ -1,4 +1,7 @@
 import './index.css'
+import {
+  getCode
+} from '../utils'
 
 // 初始化配置参数
 const defaultOption = (opt) => {
@@ -90,9 +93,9 @@ const createCol = (options) => {
 }
 
 // 渲染整个抽奖组件
-const createSlotMachine = (options) => {
+const createSlotMachine = (options, name) => {
   const slotMachine = document.createElement('div')
-  slotMachine.className = 'slotMachine'
+  slotMachine.className = `slotMachine ${name}`
 
   for (let i = 0; i < options.colCount; i++) {
     slotMachine.appendChild(createCol(options))
@@ -102,6 +105,7 @@ const createSlotMachine = (options) => {
 }
 
 class SlotMachine {
+  name = ''
   options = {}
   element = null
 
@@ -120,6 +124,8 @@ class SlotMachine {
       console.error("SlotMachine init error: The variable type of 'list' should be an array")
       return
     }
+
+    this.name = `SlotMachine_${getCode()}`
     this.options = defaultOption(options)
 
     if (options.element.indexOf('#') === 0) {
@@ -133,7 +139,7 @@ class SlotMachine {
       return
     }
 
-    this.element.appendChild(createSlotMachine(this.options))
+    this.element.appendChild(createSlotMachine(this.options, this.name))
   }
 
 
@@ -153,7 +159,7 @@ class SlotMachine {
 
     this.going = true;
 
-    const aCols = document.querySelectorAll('.slotMachine__col')
+    const aCols = document.querySelectorAll(`.${this.name} .slotMachine__col`)
     for (let i = 0; i < aCols.length; i++) {
       setTimeout(() => {
         aCols[i].play(val[i])
