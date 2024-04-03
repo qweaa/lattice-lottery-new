@@ -1,6 +1,6 @@
 import {
   getCode
-} from './utils'
+} from '../utils'
 
 class Lottery {
   name = ''
@@ -38,7 +38,7 @@ class Lottery {
       return
     }
 
-    this.name = getCode()
+    this.name = `Lottery_${getCode()}`
 
     this.updateView()
   }
