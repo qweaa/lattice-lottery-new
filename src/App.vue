@@ -79,10 +79,10 @@ onMounted(() => {
       play4()
     }
   })
-  const hasDrawIndex = [2,3]
+  const hasOpenIndex = [2,3]
   oShinCard = new SpinCard({
     element: "#SpinCard",
-    hasDrawIndex,
+    hasOpenIndex,
     list: [
       {
         front_image: getAssetsFile('/src/assets/images/SpinCard/bg.png'),
@@ -108,10 +108,9 @@ onMounted(() => {
     onsubmit(val) {
       console.log("点击了卡片：", val)
       oShinCard.open(val)
-      // hasDrawIndex.push(val)
-      // oShinCard.update({
-      //   hasDrawIndex: hasDrawIndex,
-      // })
+      if (oShinCard.options.hasOpenIndex.length !== 5) {
+        oShinCard.pushHasOpenIndex(val)
+      }
     }
   })
 })
@@ -147,8 +146,8 @@ const play5 = () => {
 }
 const play6 = () => {
   if (oShinCard) {
-    oShinCard.update({
-      hasDrawIndex: [2,3,5],
+    oShinCard.updateList(2, {
+      back_image: getAssetsFile('/src/assets/images/SpinCard/x2.png'),
     })
   }
 }
