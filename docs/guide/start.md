@@ -3,8 +3,14 @@
 ## 安装依赖
 
 ```sh
+# react 或 vue
 npm install lattice-lottery-new --save
+
+# uni-app
+npm install uni-lattice-lottery --save
 ```
+
+需要适配 uni-app 框架的抽奖组件可前往 https://www.npmjs.com/package/uni-lattice-lottery 查看。
 
 ## 按需引入
 
